@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>後で読む</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">後で読む</h1>
+    </header>
+
+    <section class="save-section">
+      <div class="page-info">
+        <div class="page-favicon" id="favicon">📄</div>
+        <div class="page-details">
+          <div class="page-title" id="page-title">読み込み中...</div>
+          <div class="page-url" id="page-url"></div>
+        </div>
+      </div>
+
+      <div class="schedule-label">いつ読む？</div>
+      <div class="schedule-buttons">
+        <button class="schedule-btn active" data-preset="tonight">
+          <span class="schedule-icon">🌙</span>
+          <span class="schedule-text">今夜</span>
+        </button>
+        <button class="schedule-btn" data-preset="weekend">
+          <span class="schedule-icon">☀️</span>
+          <span class="schedule-text">週末</span>
+        </button>
+        <button class="schedule-btn" data-preset="nextWeek">
+          <span class="schedule-icon">📅</span>
+          <span class="schedule-text">来週</span>
+        </button>
+        <button class="schedule-btn" data-preset="custom">
+          <span class="schedule-icon">⚙️</span>
+          <span class="schedule-text">カスタム</span>
+        </button>
+      </div>
+
+      <div class="custom-date hidden" id="custom-date-section">
+        <input type="datetime-local" id="custom-datetime" class="custom-datetime">
+      </div>
+
+      <button class="save-btn" id="save-btn">
+        <span class="save-icon">📥</span>
+        保存する
+      </button>
+
+      <div class="message hidden" id="message"></div>
+    </section>
+
+    <section class="today-section" id="today-section">
+      <div class="today-header">📖 今読む記事</div>
+      <div class="today-list" id="today-list">
+        <!-- 今日読む記事がここに挿入される -->
+      </div>
+    </section>
+
+    <section class="recent-section">
+      <div class="recent-header">最近保存した記事</div>
+      <div class="recent-list" id="recent-list">
+        <!-- 最近の記事がここに挿入される -->
+      </div>
+    </section>
+
+    <footer class="footer">
+      <a href="#" id="open-newtab" class="footer-link">すべての記事を見る →</a>
+    </footer>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

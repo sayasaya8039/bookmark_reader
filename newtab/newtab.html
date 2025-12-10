@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>後で読む</title>
+  <link rel="stylesheet" href="newtab.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">後で読む</h1>
+      <div class="tabs">
+        <button class="tab active" data-filter="today">今日</button>
+        <button class="tab" data-filter="all">すべて</button>
+        <button class="tab" data-filter="archived">アーカイブ</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="article-header">
+        <div class="article-count">
+          <span id="count">0</span>件の記事
+        </div>
+        <div class="bulk-actions hidden" id="bulk-actions">
+          <label class="select-all-label">
+            <input type="checkbox" id="select-all">
+            すべて選択
+          </label>
+          <button class="btn btn-bulk-delete" id="bulk-delete">選択した記事を削除</button>
+        </div>
+      </div>
+
+      <div id="article-list" class="article-list">
+        <!-- 記事カードがここに挿入される -->
+      </div>
+
+      <div id="empty-state" class="empty-state hidden">
+        <div class="empty-icon">📚</div>
+        <p class="empty-text">記事がありません</p>
+        <p class="empty-hint">拡張機能アイコンをクリックして記事を追加しましょう</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="storage-info">
+        <span class="storage-label">ストレージ:</span>
+        <div class="storage-bar">
+          <div id="storage-fill" class="storage-fill" style="width: 0%"></div>
+        </div>
+        <span id="storage-text" class="storage-text">0%</span>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="newtab.js"></script>
+</body>
+</html>
